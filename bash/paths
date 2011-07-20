@@ -1,2 +1,21 @@
-export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+#Manually added paths - 17/10/10
+PATH=$PATH:/opt/redis:/opt/android-sdk/tools:/opt/android-sdk/platform-tools:/opt/google_appengine:/opt/scala/bin
+export PATH
+
+#Node Package Manager modules installed locally need to be in PATH to be 
+#"require"ed in node.js files
+Path=$PATH:/home/amirhhz/lib/npm_modules
+export PATH
+
+JAVA_HOME=/usr/lib/jvm/java-6-sun/
+export JAVA_HOME
+
+CLOJURE_EXT=~/.clojure
+export CLOJURE_EXT
+
+# For the benefit cljr
+CLOJURE_HOME=~/.clojure
+export CLOJURE_HOME
+
+# Access to global bins that cljr installs
+export PATH=/home/amirhhz/.cljr/bin:$PATH
