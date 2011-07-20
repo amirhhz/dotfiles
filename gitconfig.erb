@@ -6,11 +6,12 @@
 [color]
 	diff = auto
 	status = auto
-	branch = auto
+  branch = auto
+  ui = true
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = mate -w
 	autocrlf = input
+  safecrlf = true
 [apply]
 	whitespace = nowarn
 [format]
