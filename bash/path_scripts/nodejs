@@ -1,4 +1,4 @@
-#Node Package Manager modules installed locally need to be in PATH to be 
+#Node Package Manager modules installed locally need to be in PATH to be
 #"require"ed in node.js files
 Path=$PATH:/home/amirhhz/lib/npm_modules
 export PATH
