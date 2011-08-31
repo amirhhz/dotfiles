@@ -13,4 +13,3 @@ export JAVA_HOME
 source ~/.bash/path_scripts/clojure
 source ~/.bash/path_scripts/nodejs
 source ~/.bash/path_scripts/virtualenvwrapper
-
