@@ -1,0 +1,7 @@
+# Manage virtualenvs with virtualenvwrapper (Python, Pip)
+
+export WORKON_HOME=$HOME/.virtualenvs
+
+# FIXME: This shouldn't be hard coded! OK in Ubuntu for now (use 'which'?)
+source /usr/local/bin/virtualenvwrapper.sh
+

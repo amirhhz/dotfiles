@@ -7,6 +7,8 @@ call pathogen#infect()
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+filetype plugin indent on
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
