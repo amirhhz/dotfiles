@@ -1,11 +1,12 @@
 # Add locally installed executables
-PATH=$PATH:/home/amirhhz/bin
+PATH=$PATH:$HOME/bin
 export PATH
 
-# Misc paths 
+# Misc paths
 PATH=$PATH:/opt/redis:/opt/scala/bin
 export PATH
 
+# Sun Java (i.e. not OpenJDK)
 JAVA_HOME=/usr/lib/jvm/java-6-sun/
 export JAVA_HOME
 
