@@ -1,3 +1,15 @@
+# Add locally installed executables
+PATH=$PATH:/home/amirhhz/bin
+export PATH
+
+# Misc paths 
+PATH=$PATH:/opt/redis:/opt/scala/bin
+export PATH
+
 JAVA_HOME=/usr/lib/jvm/java-6-sun/
 export JAVA_HOME
 
+# Add/remove as appropriate
+source ~/.bash/path_scripts/clojure
+source ~/.bash/path_scripts/nodejs
+source ~/.bash/path_scripts/virtualenvwrapper

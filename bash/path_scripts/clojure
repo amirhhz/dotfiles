@@ -1,0 +1,9 @@
+CLOJURE_EXT=~/.clojure
+export CLOJURE_EXT
+
+# For the benefit cljr
+CLOJURE_HOME=~/.clojure
+export CLOJURE_HOME
+
+# Access to global bins that cljr installs
+# export PATH=/home/amirhhz/.cljr/bin:$PATH
