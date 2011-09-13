@@ -142,7 +142,7 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 au! BufRead,BufNewFile *.haml         setfiletype haml
 
 " No Help, please
-nmap <F1> <Esc>
+" nmap <F1> <Esc>
 
 " Press ^F from insert mode to insert the current file name
 imap <C-F> <C-R>=expand("%")<CR>
@@ -155,9 +155,6 @@ imap <C-L> <Space>=><Space>
 " Display extra whitespace
 " set list listchars=tab:»·,trail:·
 
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! Rschema :e db/schema.rb
 
 " Local config
 if filereadable(".vimrc.local")
@@ -170,9 +167,8 @@ if executable("ack")
 endif
 
 " Color scheme
-" colorscheme vividchalk
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+colorscheme solarized
+set background=dark
 
 " Numbers
 set number
