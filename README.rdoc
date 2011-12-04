@@ -1,11 +1,12 @@
-= Ryan Bates Dot Files
+= Amir's Dot Files
 
-These are config files to set up a system the way I like it.
+These are config files to set up a system the way I like it. This readme
+needs changing since I forked it.
 
 
 == Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/amirhhz/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
 

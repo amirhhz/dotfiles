@@ -3,6 +3,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+#Sysadmin lols
+alias updick='/usr/bin/uptime | perl -ne "/(\d+) d/;print 8,q(=)x\$1,\"D\n\""'
+
 # See /usr/share/doc/bash-doc/examples in the bash-doc package (Ubuntu).
 
 if [ -f ~/.bash_aliases ]; then
