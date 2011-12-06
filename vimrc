@@ -148,7 +148,7 @@ au! BufRead,BufNewFile *.haml         setfiletype haml
 imap <C-F> <C-R>=expand("%")<CR>
 
 " Maps autocomplete to tab
-imap <Tab> <C-N>
+" imap <Tab> <C-N>
 
 imap <C-L> <Space>=><Space>
 
