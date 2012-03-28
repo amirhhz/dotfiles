@@ -1,7 +1,0 @@
-# Enable rbenv, a simple Ruby Version Manager
-if [[ -e $HOME/.rbenv ]] ; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-
-  # Add rbenv shims to PATH and set up autocompletion
-  eval "$(rbenv init -)"
-fi

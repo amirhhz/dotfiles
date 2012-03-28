@@ -1,7 +1,0 @@
-# Manage virtualenvs with virtualenvwrapper (Python, Pip)
-
-if [[ `which virtualenvwrapper.sh` ]] ; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  source `which virtualenvwrapper.sh`
-fi
-

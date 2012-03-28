@@ -1,17 +1,39 @@
-# Add locally installed executables
+###################
+# Local bin
 PATH=$PATH:$HOME/bin
 export PATH
+
+###################
+# Sun Java (i.e. not OpenJDK)
+JAVA_HOME=/usr/lib/jvm/java-6-sun/
+export JAVA_HOME
+
+###################
+# Virtualenvwrapper (Python, Pip)
+if [[ `which virtualenvwrapper.sh` ]] ; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source `which virtualenvwrapper.sh`
+fi
+
+###################
+# RbEnv - Simple Ruby Version Manager
+if [[ -e $HOME/.rbenv ]] ; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  # Add rbenv shims to PATH and set up autocompletion
+  eval "$(rbenv init -)"
+fi
+
+###################
+#Node Package Manager modules
+if [[ `which npm` ]] ; then
+  PATH=$PATH:$HOME/lib/node_modules
+  export PATH
+fi
 
 # Misc paths
 PATH=$PATH:/opt/redis:/opt/scala/bin
 export PATH
 
-# Sun Java (i.e. not OpenJDK)
-JAVA_HOME=/usr/lib/jvm/java-6-sun/
-export JAVA_HOME
-
 # Add/remove as appropriate
 source ~/.bash/path_scripts/clojure
-source ~/.bash/path_scripts/nodejs
-source ~/.bash/path_scripts/virtualenvwrapper
-source ~/.bash/path_scripts/rbenv
+
