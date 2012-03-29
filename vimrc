@@ -32,10 +32,18 @@ set laststatus=2            " Always(=2) display the status line
 "" Color scheme
 colorscheme solarized
 set background=dark
+set cursorline
 
 "" Line numbers
 set number                  " Show line numbers
 set numberwidth=5           " Minimum no. of columns for line number
+
+"" GUI settings
+if has("gui_running")
+    set columns=160 " Resize GUI to fit at least laptop screen
+    set lines=39
+    set mouse=a " mouse
+endif
 
 "" Local config
 if filereadable(".vimrc.local")
