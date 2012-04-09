@@ -4,7 +4,7 @@ call pathogen#infect()      " Enable pathogen
 
 syntax enable
 set encoding=utf-8
-set showcmd		            " display incomplete commands
+set showcmd                 " display incomplete commands
 filetype plugin indent on   " load file type plugins + indentation
 
 "" Whitespace
@@ -23,10 +23,10 @@ set smartcase               " ...unless there is a capital letter
 "" Backup
 set writebackup             " Keep backups whilst editing non-saved file ...
 set nobackup                " ... but don't keep backups arounds after saving.
-set history=50		        " keep 50 lines of command line history
+set history=50              " keep 50 lines of command line history
 
 "" Status
-set ruler		            " show the cursor position all the time
+set ruler                   " show the cursor position all the time
 set laststatus=2            " Always(=2) display the status line
 
 "" Color scheme
@@ -47,6 +47,6 @@ endif
 
 "" Local config
 if filereadable(".vimrc.local")
-  source .vimrc.local
+    source .vimrc.local
 endif
 
