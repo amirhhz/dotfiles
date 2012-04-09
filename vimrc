@@ -52,3 +52,19 @@ if filereadable(".vimrc.local")
     source .vimrc.local
 endif
 
+"" Custom mappings
+
+" remove all trailing whitespace
+map <Leader>w :%s/\s\+$//<CR>
+
+" Don't use Ex mode, replace Q with formatting command
+map Q gq
+
+" Shorter window movements
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+"" Custom whitespace for filetypes
+autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
