@@ -12,6 +12,8 @@ set nowrap                  " don't wrap lines
 set tabstop=4 shiftwidth=4  " a tab is four spaces
 set expandtab               " use spaces, not tabs
 set backspace=indent,eol,start  " backspace over everything in insert mode
+set listchars=tab:>-,trail:~    " List of whitespace I don't like ...
+set list                    " ... and show them
 
 "" Searching
 set hlsearch                " Highlight matches
@@ -30,7 +32,7 @@ set ruler                   " show the cursor position all the time
 set laststatus=2            " Always(=2) display the status line
 
 "" Color scheme
-colorscheme solarized
+silent! :colorscheme solarized
 set background=dark
 set cursorline
 
