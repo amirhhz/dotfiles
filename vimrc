@@ -40,13 +40,6 @@ set cursorline
 set number                  " Show line numbers
 set numberwidth=5           " Minimum no. of columns for line number
 
-"" GUI settings
-if has("gui_running")
-    set columns=160         " Resize GUI to fit at least laptop screen
-    set lines=39
-    set mouse=a             " ensure mouse is enabled
-endif
-
 "" Local config
 if filereadable(".vimrc.local")
     source .vimrc.local
