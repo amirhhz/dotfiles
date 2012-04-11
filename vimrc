@@ -32,6 +32,7 @@ set ruler                   " show the cursor position all the time
 set laststatus=2            " Always(=2) display the status line
 
 "" Color scheme
+let g:solarized_termcolors=256
 silent! :colorscheme solarized
 set background=dark
 set cursorline
