@@ -23,8 +23,8 @@ set smartcase               " ...unless there is a capital letter
 
 
 "" Backup
-set writebackup             " Keep backups whilst editing non-saved file ...
-set nobackup                " ... but don't keep backups arounds after saving.
+set nowritebackup           " Do not keep backups whilst editing non-saved file ...
+set nobackup                " and don't keep backups arounds after saving.
 set history=50              " keep 50 lines of command line history
 
 "" Status
@@ -40,6 +40,14 @@ set cursorline
 "" Line numbers
 set number                  " Show line numbers
 set numberwidth=5           " Minimum no. of columns for line number
+
+"" Customise Command-T
+silent! let g:CommandTMaxHeight=15
+nnoremap <silent> <Leader>f :CommandT<CR>
+nnoremap <silent> <Leader>t :CommandTTag<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>j :CommandTJump<CR>
+
 
 "" Local config
 if filereadable(".vimrc.local")
