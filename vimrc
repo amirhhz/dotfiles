@@ -9,6 +9,7 @@ filetype plugin indent on   " load file type plugins + indentation
 
 "" Whitespace
 set nowrap                  " don't wrap lines
+set showbreak=…             " But if turned on indicate wraps with ellipsis
 set tabstop=4 shiftwidth=4  " a tab is four spaces
 set expandtab               " use spaces, not tabs
 set backspace=indent,eol,start  " backspace over everything in insert mode
@@ -26,6 +27,7 @@ set smartcase               " ...unless there is a capital letter
 set nowritebackup           " Do not keep backups whilst editing non-saved file ...
 set nobackup                " and don't keep backups arounds after saving.
 set history=50              " keep 50 lines of command line history
+set directory-=.            " Don't keep swap files next to originals
 
 "" Status
 set ruler                   " show the cursor position all the time
@@ -67,6 +69,17 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" Function and mapping for toggling line-wrapping
+function! ToggleWrap()
+    if &wrap == 0
+        set wrap
+    else
+        set nowrap
+    endif
+endfunction
+
+noremap <leader>w :call ToggleWrap()<cr>
 
 "" Custom whitespace for filetypes
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
