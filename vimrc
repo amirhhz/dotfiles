@@ -21,6 +21,8 @@ set hlsearch                " Highlight matches
 set incsearch               " incremental searching
 set ignorecase              " Case insensitive search ...
 set smartcase               " ...unless there is a capital letter
+set wrapscan                " Wrap search
+set wildmenu                " Tab-completion more like bash
 
 
 "" Backup
@@ -80,6 +82,9 @@ function! ToggleWrap()
 endfunction
 
 noremap <leader>w :call ToggleWrap()<cr>
+
+" Regenerate python tags file for current dir and tell Command-T
+noremap <F12> :silent !ctags -R --languages=python .<CR>:CommandTFlush<CR>
 
 "" Custom whitespace for filetypes
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
