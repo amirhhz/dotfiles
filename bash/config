@@ -77,6 +77,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# For Max OS X set envvar that turns on terminal colors
+if [[ `uname` == 'Darwin' ]]; then
+    export CLICOLOR=1
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
