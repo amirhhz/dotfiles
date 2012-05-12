@@ -1,7 +1,21 @@
 ###################
 # Local bin
-PATH=$PATH:$HOME/bin
-export PATH
+if [ -d "$HOME/bin" ] ; then
+    PATH=$HOME/bin:$PATH
+    export PATH
+fi
+
+###################
+# Use proper tools on OS X
+has_brew=`which brew`
+
+# on OS X use proper coreutils from homebrew instead of outdated apple rubbish
+if [[ $has_brew && -d `brew --prefix coreutils`/libexec/gnubin ]]; then
+    PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
+    export PATH
+fi
+
+unset has_brew
 
 ###################
 # Sun Java when available (i.e. not OpenJDK)

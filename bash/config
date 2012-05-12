@@ -65,8 +65,8 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+# enable color support of ls and also add handy aliases. gdircolors is for OS X GNU coreutils
+if [[ -x /usr/bin/dircolors || `which gdircolors` ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
@@ -77,7 +77,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# For Max OS X set envvar that turns on terminal colors
+# For Max OS X set envvar that turns on terminal colors for BSD ls
 if [[ `uname` == 'Darwin' ]]; then
     export CLICOLOR=1
 fi
