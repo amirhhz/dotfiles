@@ -4,9 +4,11 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 ###################
-# Sun Java (i.e. not OpenJDK)
-JAVA_HOME=/usr/lib/jvm/java-6-sun/
-export JAVA_HOME
+# Sun Java when available (i.e. not OpenJDK)
+if [[ -e /usr/lib/jvm/java-6-sun/ ]] ; then
+  JAVA_HOME=/usr/lib/jvm/java-6-sun/
+  export JAVA_HOME
+fi
 
 ###################
 # Virtualenvwrapper (Python, Pip)
@@ -30,11 +32,3 @@ if [[ `which npm` ]] ; then
   PATH=$PATH:$HOME/lib/node_modules
   export PATH
 fi
-
-# Misc paths
-PATH=$PATH:/opt/redis:/opt/scala/bin
-export PATH
-
-# Add/remove as appropriate
-source ~/.bash/path_scripts/clojure
-
