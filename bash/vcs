@@ -111,7 +111,7 @@ dvcs_function="
         # changed *tracked* files in local directory?
         gitChange=\$(echo \$gitStatus | ack 'modified:|deleted:|new file:')
         if [ -n \"\$gitChange\" ]; then
-            gitChange=\"\\[\$COLOR_YELLOW\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\]\"
+            gitChange=\"\\[\$COLOR_YELLOW\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\] \"
         fi
 
         # output the branch and changed character if present
@@ -161,7 +161,7 @@ dvcs_function="
 
         hgm=\${promptOptions[0]:1}
         if [ -n \"\$hgm\" ]; then
-            hgChange=\"\\[\$COLOR_MAGENTA\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\]\"
+            hgChange=\"\\[\$COLOR_MAGENTA\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\] \"
         fi
 
         # output branch and changed character if present
@@ -196,7 +196,7 @@ dvcs_function="
         # changed files in local directory? NOTE: This command is the slowest of the bunch
         svnChange=\$(svn status | ack \"^M|^!\" | wc -l)
         if [[ \"\$svnChange\" != \"       0\" ]]; then
-            svnChange=\"\\[\$COLOR_CYAN\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\]\"
+            svnChange=\"\\[\$COLOR_CYAN\\] \\[`tput sc`\\]  \\[`tput rc`\\]\\[\$DELTA_CHAR\\] \"
         else
             svnChange=\"\"
         fi
