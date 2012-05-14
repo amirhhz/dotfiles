@@ -45,14 +45,36 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#########################
+# PS1 stuff
+
+_PRE='\[\033['
+_POST='m\]'
+
+_WHITE_ON_RED="${_PRE}37;41;01${_POST}"
+_DIM_CYAN="${_PRE}36${_POST}"
+_BRIGHT_CYAN="${_PRE}36;01${_POST}"
+_RESET="${_PRE}00${_POST}"
+
+_LASTEXIT="$_WHITE_ON_RED${?#0}$_RESET"
+_USER="$_DIM_CYAN\u$_RESET"
+_HOST="$_DIM_CYAN\h$_RESET"
+_PWD="$_DIM_CYAN\w$_RESET"
+_PROMPT="$_BRIGHT_CYAN\$$_RESET"
+
+# As a reference example (thanks, tartley):
+# export PS1="$_LASTEXIT$_USER@$_HOST:$_PWD\$(${dvcs_function})\n$_PROMPT "
+
 # DVCS functions for PS1
-parse_git_branch() {
-       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
+# parse_git_branch() {
+#        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+# }
+source ~/.bash/vcs
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $(parse_git_branch)\n\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(${dvcs_function})\n$_PROMPT "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w $(parse_git_branch)\n\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$(${dvcs_function})\n$_PROMPT "
 fi
 unset color_prompt force_color_prompt
 
@@ -65,8 +87,13 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+unset _PRE _POST _WHITE_ON_RED _DIM_CYAN _BRIGHT_CYAN _RESET _LASTEXIT _USER _HOST _PWD _PROMPT
+# End PS1 stuff
+#########################
+
+
+# enable color support of ls and also add handy aliases. gdircolors is for OS X GNU coreutils
+if [[ -x /usr/bin/dircolors || `which gdircolors` ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
@@ -77,9 +104,15 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# For Max OS X set envvar that turns on terminal colors for BSD ls
+if [[ `uname` == 'Darwin' ]]; then
+    export CLICOLOR=1
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
