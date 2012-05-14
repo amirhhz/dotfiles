@@ -60,11 +60,14 @@ endif
 
 "" Custom mappings
 
-" remove all trailing whitespace
-map <Leader>w :%s/\s\+$//<CR>
+" Strip all trailing whitespace, maintaining current position
+map <Leader>s ms:%s/\s\+$//<CR>`s
 
 " Don't use Ex mode, replace Q with formatting command
 map Q gq
+
+" Make Y consistent with C and D by yanking till the end of the line
+noremap Y y$
 
 " Shorter window movements
 map <C-h> <C-w>h
