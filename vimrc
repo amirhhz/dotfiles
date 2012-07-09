@@ -91,3 +91,6 @@ noremap <F12> :silent !ctags -R --languages=python .<CR>:CommandTFlush<CR>
 
 "" Custom whitespace for filetypes
 autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
+
+"" Customisations for plugins
+let g:pyflakes_use_quickfix = 0
