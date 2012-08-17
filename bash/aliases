@@ -1,6 +1,7 @@
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lrt='ls -lrt'
 alias du='du -h' # Always human-readable
 alias df='df -h' # Always human-readable
 
