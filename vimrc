@@ -45,6 +45,8 @@ set cursorline
 set number                  " Show line numbers
 set numberwidth=5           " Minimum no. of columns for line number
 
+let mapleader=","
+
 "" Customise Command-T
 silent! let g:CommandTMaxHeight=15
 nnoremap <silent> <Leader>f :CommandT<CR>
