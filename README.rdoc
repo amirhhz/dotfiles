@@ -3,6 +3,12 @@
 These are config files to set up a system the way I like it. This readme
 needs changing since I forked it.
 
+== Requirements
+
+Install Ack. In Ubuntu do the following:
+
+  sudo apt-get install ack-grep
+  sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 == Installation
 
