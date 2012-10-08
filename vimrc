@@ -31,6 +31,9 @@ set nobackup                " and don't keep backups arounds after saving.
 set history=50              " keep 50 lines of command line history
 set directory-=.            " Don't keep swap files next to originals
 
+"" Files and Folders
+set wildignore=*.pyc
+
 "" Status
 set ruler                   " show the cursor position all the time
 set laststatus=2            " Always(=2) display the status line
