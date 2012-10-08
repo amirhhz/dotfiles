@@ -57,12 +57,6 @@ nnoremap <silent> <Leader>t :CommandTTag<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 nnoremap <silent> <Leader>j :CommandTJump<CR>
 
-
-"" Local config
-if filereadable(".vimrc.local")
-    source .vimrc.local
-endif
-
 "" Custom mappings
 
 " Strip all trailing whitespace, maintaining current position
@@ -99,3 +93,8 @@ autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
 
 "" Customisations for plugins
 let g:pyflakes_use_quickfix = 0
+
+"" Local config
+if filereadable(".vimrc.local")
+    source .vimrc.local
+endif
