@@ -13,6 +13,9 @@ has_brew=`which brew`
 if [[ $has_brew && -d `brew --prefix coreutils`/libexec/gnubin ]]; then
     PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
     export PATH
+    # Make sure manpage lookups refer to the coreutils installations (v8.20+)
+    MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+    export MANPATH
 fi
 
 unset has_brew
