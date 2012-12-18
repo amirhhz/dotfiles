@@ -2,6 +2,12 @@
 # Use proper tools on OS X
 has_brew=`which brew`
 
+if [[ $has_brew ]]; then
+    # Local bin should take precedence
+    PATH=/usr/local/bin:$PATH
+    export PATH
+fi
+
 # on OS X use proper coreutils from homebrew instead of outdated apple rubbish
 if [[ $has_brew && -d `brew --prefix coreutils`/libexec/gnubin ]]; then
     PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
