@@ -4,7 +4,7 @@ has_brew=`which brew`
 
 if [[ $has_brew ]]; then
     # Local bin should take precedence
-    PATH=/usr/local/bin:$PATH
+    PATH=`brew --prefix`/bin:$PATH
     export PATH
 fi
 
