@@ -49,11 +49,8 @@ if [[ -e $HOME/.rbenv ]] ; then
 fi
 
 ###################
-#Node Package Manager modules
-if [[ `which npm` ]] ; then
-  PATH=$PATH:$HOME/lib/node_modules
-  export PATH
-fi
+#Node Version Manager
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 ###################
 # Local bin
