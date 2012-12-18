@@ -8,6 +8,12 @@ if [[ $has_brew ]]; then
     export PATH
 fi
 
+if [[ $has_brew  && -d `brew --prefix`/share/python ]]; then
+    # Brew'ed Python installed so make scripts available
+    PATH=`brew --prefix`/share/python:$PATH
+    export PATH
+fi
+
 # on OS X use proper coreutils from homebrew instead of outdated apple rubbish
 if [[ $has_brew && -d `brew --prefix coreutils`/libexec/gnubin ]]; then
     PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
