@@ -90,6 +90,15 @@ autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2
 "" Customisations for plugins
 let g:pyflakes_use_quickfix = 0
 
+"" Customise Syntastic
+let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_python_pylint_args = ' --rcfile .pylintrc'
+
+let g:syntastic_javascript_checkers = []
+
+highlight clear SignColumn  " Prettify Syntastic's gutter symbols
+
+
 "" Local config
 if filereadable(".vimrc.local")
     source .vimrc.local
