@@ -74,16 +74,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Function and mapping for toggling line-wrapping
-function! ToggleWrap()
-    if &wrap == 0
-        set wrap
-    else
-        set nowrap
-    endif
-endfunction
-
-noremap <leader>w :call ToggleWrap()<cr>
+" Toggling line-wrapping, and display current wrap value
+noremap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " Regenerate python tags file for current dir and tell Command-T
 noremap <F12> :silent !ctags -R --languages=python .<CR>:CommandTFlush<CR>
