@@ -7,6 +7,8 @@ set encoding=utf-8
 set showcmd                 " display incomplete commands
 filetype plugin indent on   " load file type plugins + indentation
 set mouse=a                 " Allow mouse usage in terminal mode
+let mapleader=","           " Use comma for <Leader>
+
 
 "" Whitespace
 set nowrap                  " don't wrap lines
@@ -24,6 +26,9 @@ set ignorecase              " Case insensitive search ...
 set smartcase               " ...unless there is a capital letter
 set wrapscan                " Wrap search
 set wildmenu                " Tab-completion more like bash
+
+" Shortcut for turn off search highlights
+nnoremap <Leader><Esc> :nohlsearch<cr>
 
 
 "" Backup
@@ -48,8 +53,6 @@ set cursorline
 "" Line numbers
 set number                  " Show line numbers
 set numberwidth=5           " Minimum no. of columns for line number
-
-let mapleader=","
 
 "" Customise Command-T
 silent! let g:CommandTMaxHeight=15
