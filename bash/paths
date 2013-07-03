@@ -32,6 +32,11 @@ if [[ -e /usr/lib/jvm/java-6-sun/ ]] ; then
   export JAVA_HOME
 fi
 
+if [[ -e /usr/libexec/java_home ]] ; then
+  JAVA_HOME=`/usr/libexec/java_home`
+  export JAVA_HOME
+fi
+
 ###################
 # Virtualenvwrapper (Python, Pip)
 if [[ `which virtualenvwrapper.sh` ]] ; then
