@@ -2,8 +2,8 @@
 has_brew=`which brew`
 
 # The config file contains the completion for Ubuntu, this is for OS X
-if [[ $has_brew && -f `brew --prefix`/etc/bash_completion ]]; then
-    . `brew --prefix`/etc/bash_completion;
+if [[ $has_brew && -f `brew --repository`/Library/Contributions/brew_bash_completion.sh ]]; then
+    source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 fi
 
 unset has_brew
