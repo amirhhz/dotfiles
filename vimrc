@@ -99,6 +99,8 @@ let g:syntastic_python_pylint_args = ' --rcfile .pylintrc'
 let g:syntastic_javascript_checkers = []
 let g:syntastic_html_checkers = []
 
+let g:ctrlp_working_path_mode = 'rc'
+
 highlight clear SignColumn  " Prettify Syntastic's gutter symbols
 
 
