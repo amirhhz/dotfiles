@@ -17,6 +17,12 @@ if [[ $has_brew && -d `brew --prefix coreutils`/libexec/gnubin ]]; then
     export MANPATH
 fi
 
+# Use homebrew-installed python if available
+if [[ $has_brew && -d `brew --prefix python`/libexec/bin ]]; then
+    PATH=`brew --prefix python`/libexec/bin:$PATH
+    export PATH
+fi
+
 unset has_brew
 
 ###################
