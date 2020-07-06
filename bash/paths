@@ -20,18 +20,6 @@ fi
 unset has_brew
 
 ###################
-# Sun Java when available (i.e. not OpenJDK)
-if [[ -e /usr/lib/jvm/java-6-sun/ ]] ; then
-  JAVA_HOME=/usr/lib/jvm/java-6-sun/
-  export JAVA_HOME
-fi
-
-if [[ -e /usr/libexec/java_home ]] ; then
-  JAVA_HOME=`/usr/libexec/java_home`
-  export JAVA_HOME
-fi
-
-###################
 # Virtualenvwrapper (Python, Pip)
 if [[ `which virtualenvwrapper.sh` ]] ; then
   export WORKON_HOME=$HOME/.virtualenvs
@@ -49,8 +37,7 @@ fi
 ###################
 #Node Version Manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 ###################
 # Local bin
