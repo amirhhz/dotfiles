@@ -104,7 +104,7 @@ if [[ -x /usr/bin/dircolors || `which gdircolors` ]]; then
     alias egrep='egrep --color=auto'
 fi
 
-# For Max OS X set envvar that turns on terminal colors for BSD ls
+# For Mac OS X set envvar that turns on terminal colors for BSD ls
 if [[ `uname` == 'Darwin' ]]; then
     export CLICOLOR=1
 fi
